@@ -10,6 +10,6 @@ import {
 } from "@validators/admin/home/home.validator";
 
 
-router.post('/get-summary', homeController.getSummary);
+router.post('/get-summary', getSummaryRules(), validate, homeController.getSummary);
 
 export default router;
