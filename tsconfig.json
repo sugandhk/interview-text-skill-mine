@@ -23,6 +23,7 @@
       "@middleware/*": [
         "src/middleware/*"
       ],
+      "*": ["node_modules/*", "src/types/*"]
     },
   },
   "ts-node": {
