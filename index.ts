@@ -7,7 +7,7 @@ import helmet from "helmet";
 import db from "./src/models/index";
 import response from "./src/utils/response";
 import "module-alias/register";
-import { Server as SocketIOServer } from 'socket.io';
+
 import { createServer, Server as HTTPServer } from 'http';
 
 /**
@@ -25,23 +25,6 @@ app.use(helmet());
 app.use(compression());
 app.use(bodyParser.json());
 const httpServer = createServer(app);
-const io = new SocketIOServer(httpServer, {
-  path: '/socket.io',
-  cors: {
-    origin: "*"
-  }
-});
-
-
-// (async function () {
-//   try {
-//     await db.sequelize.authenticate();
-//     console.log("Connection has been established successfully.");
-//   } catch (error) {
-//     console.error("Unable to connect to the database:", error);
-//   }
-// })();
-
 
 /**
  * @admin routes

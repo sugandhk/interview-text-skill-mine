@@ -44,7 +44,6 @@ const compression_1 = __importDefault(require("compression"));
 const helmet_1 = __importDefault(require("helmet"));
 const response_1 = __importDefault(require("./src/utils/response"));
 require("module-alias/register");
-const socket_io_1 = require("socket.io");
 const http_1 = require("http");
 /**
  * @admin routes
@@ -58,20 +57,6 @@ app.use((0, helmet_1.default)());
 app.use((0, compression_1.default)());
 app.use(body_parser_1.default.json());
 const httpServer = (0, http_1.createServer)(app);
-const io = new socket_io_1.Server(httpServer, {
-    path: '/socket.io',
-    cors: {
-        origin: "*"
-    }
-});
-// (async function () {
-//   try {
-//     await db.sequelize.authenticate();
-//     console.log("Connection has been established successfully.");
-//   } catch (error) {
-//     console.error("Unable to connect to the database:", error);
-//   }
-// })();
 /**
  * @admin routes
  */
