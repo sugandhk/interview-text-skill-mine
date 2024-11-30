@@ -8,30 +8,31 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = __importDefault(require("axios"));
+// import axios from "axios";
 require("dotenv").config();
 const getSummary = (content) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield axios_1.default.post('https://api.groq.com/openai/v1/chat/completions', {
-            model: "llama3-8b-8192",
-            messages: [
-                {
-                    role: "user",
-                    content: content
-                }
-            ]
-        }, {
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${process.env.GROQ_API_KEY}`
-            }
-        });
-        console.log(response.data, "from sms top");
-        return response.data;
+        // const response = await axios.post(
+        //   'https://api.groq.com/openai/v1/chat/completions',
+        //   {
+        //     model: "llama3-8b-8192",
+        //     messages: [
+        //       {
+        //         role: "user",
+        //         content: content
+        //       }
+        //     ]
+        //   },
+        //   {
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //       "Authorization": `Bearer ${process.env.GROQ_API_KEY}`
+        //     }
+        //   }
+        // );
+        // console.log(response.data, "from sms top");
+        return "Test"; //response.data;
     }
     catch (error) {
         console.log(error, "from sms top");
